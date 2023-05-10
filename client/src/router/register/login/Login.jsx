@@ -2,12 +2,19 @@ import { useRef, useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useCookies } from 'react-cookie'
+import { Slide, ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 // import axios from '../../../api/axios'
 // const LOGIN_URL = 'baseURL/auth/login'
 const LOGIN_URL = 'http://localhost:5174/auth/login'
 // ------------------------------------------------------//
 const Login = () => {
+  //  const notify = () =>
+  //    toast.success('You succefully registered', {
+  //      position: toast.POSITION.TOP_LEFT,
+  //      theme: 'dark',
+  //    })
   const navigate = useNavigate()
   const [cookies, setCookies] = useCookies(['access_token'])
   const userRef = useRef()
@@ -43,7 +50,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    alert('click')
+    // alert('click')
     // if button enabled with JS hack
     // const v1 = USER_REGEX.test(username)
     // const v2 = PWD_REGEX.test(password)
@@ -60,11 +67,13 @@ const Login = () => {
     // setSuccess(true)
     if (response.data.userID) {
       // console.log('No Server Response')
-      alert('true')
+      toast.success('successfully')
       // console.log('wrong password username')
-      navigate('/')
+      setTimeout(() => {
+        navigate('/')
+      }, 3000)
     } else {
-      alert('wrong password username')
+      toast.error('wrong password username')
     }
     // remove localstorage
     // window.localStorage.removeItem('userID', response.data.userID)
@@ -89,7 +98,7 @@ const Login = () => {
       {success ? (
         // navigate('/')
         <section>
-          <h1>Welcome to Home page!</h1>
+          <h1>Something went wrong!</h1>
           <p>
             <a
               href='/
@@ -157,6 +166,11 @@ const Login = () => {
             >
               Sign Up
             </button>
+            <ToastContainer
+              transition={Slide}
+              theme='colored'
+              limit={1}
+            ></ToastContainer>
           </form>
           <p className='register__para'>
             Already registered?

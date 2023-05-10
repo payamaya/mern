@@ -5,3 +5,4 @@ npm install react-icons
 npm init --yes
 npm install axios
 npm install react-router-dom@6
+npm i react-toastify

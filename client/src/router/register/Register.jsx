@@ -1,14 +1,17 @@
 import { useRef, useState, useEffect } from 'react'
-// import {
-//   faCheck,
-//   faTimes,
-//   faInfoCircle,
-// } from '@fortawesome/free-solid-svg-icons'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faCheck,
+  faTimes,
+  faInfoCircle,
+} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import axios from '../api/api'
 import axios from 'axios'
 import './register.css'
 import { useNavigate } from 'react-router-dom'
+// default value is Bounce instead we use here Slide(Zoom, Flip)
+import { Slide, ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 //regex statment to validate the username and the passowrd
 //user must stat with lower or uppercase between 3 to 23 characters, digits hyphens or underscore. Must be between 4 to 24 characters
@@ -18,6 +21,10 @@ const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/
 const REGISTER_URL = 'http://localhost:5174/auth/register'
 // ------------------------------------------------------//
 const Register = () => {
+  // can postiotn your toast position and the theme as well
+  // can dec/increase the autoclose which by default is 5 sec and disable as well
+  // const notify = () => toast.success('You succefully registered',{position:toast.POSITION.TOP_LEFT, theme: 'dark'});
+
   const navigate = useNavigate()
   const userRef = useRef()
   const errRef = useRef()
@@ -73,12 +80,16 @@ const Register = () => {
         }
       )
       if (response.data.user) {
-        alert('user exist')
+        toast.error('user exist')
         return
       } else {
-        alert('connected')
-        setSuccess(true)
-        navigate('/auth/login')
+        toast.success('connected succefully')
+        setTimeout(() => {
+          navigate('/auth/login')
+          setSuccess(true)
+        }, 3000)
+
+        // navigate('/auth/login')
       }
       // alert('Registration succeed')
       // console.log(username)
@@ -107,7 +118,7 @@ const Register = () => {
   return (
     <div className='register__wrapper'>
       {success ? (
-        <p>Welcome Home</p>
+        <p>Redirecting</p>
       ) : (
         <section className='section'>
           <p
@@ -121,14 +132,14 @@ const Register = () => {
           <form className='register__form' onSubmit={handleSubmit}>
             <label htmlFor='username' className='register__label'>
               Username:
-              {/* <FontAwesomeIcon
+              <FontAwesomeIcon
                 icon={faCheck}
                 className={validName ? 'valid' : 'hide'}
               />
               <FontAwesomeIcon
                 icon={faTimes}
-                className={validName || !user ? 'hide' : 'invalid'}
-              /> */}
+                className={validName || !username ? 'hide' : 'invalid'}
+              />
             </label>
             <input
               className='register__input'
@@ -145,7 +156,7 @@ const Register = () => {
               onFocus={() => setUserFocus(true)}
               onBlur={() => setUserFocus(false)}
             />
-            {/* <p
+            <p
               id='uidnote'
               className={
                 userFocus && username && !validName
@@ -159,18 +170,18 @@ const Register = () => {
               Must begin with a letter.
               <br />
               Letters, numbers, underscores, hyphens allowed.
-            </p> */}
+            </p>
 
             <label htmlFor='password' className='register__label'>
               Password:
-              {/* <FontAwesomeIcon
+              <FontAwesomeIcon
                 icon={faCheck}
                 className={validPwd ? 'valid' : 'hide'}
               />
               <FontAwesomeIcon
                 icon={faTimes}
-                className={validPwd || !pwd ? 'hide' : 'invalid'}
-              /> */}
+                className={validPwd || !password ? 'hide' : 'invalid'}
+              />
             </label>
             <input
               className='register__input'
@@ -189,9 +200,9 @@ const Register = () => {
               id='pwdnote'
               className={pwdFocus && !validPwd ? 'instructions' : 'offscreen'}
             >
-              {/* <FontAwesomeIcon icon={faInfoCircle} />
+              <FontAwesomeIcon icon={faInfoCircle} />
               8 to 24 characters.
-              <br /> */}
+              <br />
               Must include uppercase and lowercase letters, a number and a
               special character.
               <br />
@@ -205,14 +216,14 @@ const Register = () => {
 
             <label htmlFor='confirm_pwd' className='register__label'>
               Confirm Password:
-              {/* <FontAwesomeIcon
+              <FontAwesomeIcon
                 icon={faCheck}
                 className={validMatch && matchPwd ? 'valid' : 'hide'}
               />
               <FontAwesomeIcon
                 icon={faTimes}
                 className={validMatch || !matchPwd ? 'hide' : 'invalid'}
-              /> */}
+              />
             </label>
             <input
               className='register__input'
@@ -237,12 +248,21 @@ const Register = () => {
               Must match the first password input field.
             </p>
 
-            <button
-              className='register__btn'
-              disabled={!validName || !validPwd || !validMatch ? true : false}
-            >
-              Sign Up
-            </button>
+            <div className='toastify__btn'>
+              <button
+                // onClick={notify}
+                className='register__btn'
+                disabled={!validName || !validPwd || !validMatch ? true : false}
+              >
+                Sign Up
+              </button>
+              {/* Limit decides how many notification we want to show can hideProgressBar also*/}
+              <ToastContainer
+                transition={Slide}
+                theme='dark'
+                limit={1}
+              ></ToastContainer>
+            </div>
           </form>
           <p>
             Already registered?
