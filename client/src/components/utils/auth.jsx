@@ -1,0 +1,33 @@
+import { useState, createContext, useContext } from 'react'
+//
+const AuthContext = createContext(null)
+// Define the auth provider component
+export const AuthProvider = ({ children }) => {
+  // we define a function to login and logout using useState
+
+  const [user, setUser] = useState(null)
+
+  // Use the setUser function to define login/logout function recieves user's
+
+  const login = (user) => {
+    setUser(user)
+  }
+  // logout doesn't recieves any argument
+  const logout = () => {
+    setUser(null)
+  }
+  // we are going to provide these values using the auth context provider
+  // This will wrap the children props
+  // Provider component needs a value prop which is going to be equal to the same key value pairs
+  return (
+    // make sure to destructure the children props
+    <AuthContext.Provider value={{ user, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  )
+}
+// finally define a function that return the value of AuthContext
+export const useAuth = () => {
+  return useContext(AuthContext)
+}
+// We nedd to wrap the entire component tree in App.js

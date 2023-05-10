@@ -1,0 +1,66 @@
+{
+  "menuItems": [
+    {
+      "id": 1,
+      "title": "About",
+      "link": "/about"
+    },
+    {
+      "id": 2,
+      "title": "Profile",
+      "link": "/profile"
+    },
+    {
+      "id": 3,
+      "title": "Products",
+      "link": "/products"
+    },
+    {
+      "id": 4,
+      "title": "FAQ",
+      "link": "/faq"
+    },
+    {
+      "id": 5,
+      "title": "Register",
+      "link": "/register"
+    },
+    {
+      "id": 6,
+      "title": "Login",
+      "link": "/auth/login"
+    }
+  ],
+  "hamburgareMenu": [
+    {
+      "id": 1,
+      "title": "About",
+      "link": "/about"
+    },
+    {
+      "id": 2,
+      "title": "Profile",
+      "link": "/profile"
+    },
+    {
+      "id": 3,
+      "title": "Products",
+      "link": "/products"
+    },
+    {
+      "id": 4,
+      "title": "FAQ",
+      "link": "/faq"
+    },
+    {
+      "id": 5,
+      "title": "Login",
+      "link": "/auth/login"
+    },
+    {
+      "id": 6,
+      "title": "Register",
+      "link": "/register"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+npm install express cors bcrypt jsonwebtoken mongoose
+npm install nodemon --save-dev
+npm install connect-mongo@3.1.2
+
+npm i connect-mongo

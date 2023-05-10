@@ -1,0 +1,73 @@
+.moon {
+  color: rgb(124, 124, 158);
+  height: 14px;
+}
+
+.sun {
+  color: rgb(214, 214, 7);
+  height: 14px;
+}
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  width: 50px;
+  height: 20px;
+  background-color: var(--white-COLOR);
+  display: flex;
+  border-radius: 50px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  transform: scale(1);
+  border: 2px var(--DARK-MODE) solid;
+}
+
+.ball {
+  width: 16px;
+  height: 16px;
+  background-color: var(--DARK-MODE);
+  position: absolute;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+/*  target the elemenent after the label*/
+.checkbox:checked + .label .ball {
+  transform: translateX(25px);
+}
+.checkbox:checked:active + .label .ball {
+  transform: translateX(25px);
+}
+.dark-mode__container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+@media (766px > width) {
+  .label {
+    width: 35px;
+    height: 15px;
+  }
+  .ball {
+    width: 12px;
+    height: 12px;
+  }
+  .checkbox:checked + .label .ball {
+    transform: translateX(10px);
+  }
+  .checkbox:checked:active + .label .ball {
+    transform: translateX(12px);
+  }
+}
+@media (426px > width) {
+.dark-mode__container{
+  position: relative;
+  top: -2vh;
+  left: -.5rem;
+}
+}

@@ -1,0 +1,33 @@
+.about__wrapper {
+  padding-inline: 216px;
+  font-size: 1.8rem;
+}
+.about-container {
+  column-gap: 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  justify-content: space-between;
+}
+.about-header {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: var(--MARGIN);
+  padding-top: 1em;
+  order: 1;
+}
+.about-main,
+.about-footer,
+.about-aside {
+  margin: var(--MARGIN);
+}
+.about-aside {
+  width: 100%;
+  justify-self: flex-end;
+}
+.about-footer__wrapper {
+  border: 2px solid red;
+  grid-column-end: span 2;
+  margin: var(--MARGIN);
+}

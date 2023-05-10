@@ -1,0 +1,127 @@
+.register__wrapper {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.section {
+  width: 100%;
+  max-width: 420px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--BG-COLOR);
+  box-shadow: var(--SHADOWS);
+  border: var(--BORDERS);
+  margin-block: 3rem;
+}
+
+.register__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  padding-bottom: 1rem;
+}
+
+a,
+a:visited {
+  color: #fff;
+}
+
+.register__input[type='text'],
+.register__input[type='password'],
+.register__btn,
+textarea {
+  font-family: 'Cormorant Upright', sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+label,
+.register__btn {
+  margin-top: 1rem;
+}
+.register__btn {
+  background-color: var(--SEARCH-BAR);
+}
+
+.register__btn,
+.register__label {
+  padding: 0.5rem;
+  color: var(--DARK-COLOR);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.instructions {
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  background: var(--DARK-COLOR);
+  color: #fff;
+  padding: 1.25rem;
+  position: relative;
+  bottom: -10px;
+  max-height: fit-content;
+}
+#pwdnote,
+#confirmnote {
+  font-size: 1.2rem;
+}
+.register__para {
+  font-size: 1.2rem;
+  color: var(--LIGHT-COLOR);
+}
+.instructions > svg {
+  margin-right: 0.25rem;
+}
+
+.offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.hide {
+  display: none;
+}
+
+.valid {
+  color: limegreen;
+  margin-left: 0.25rem;
+}
+
+.invalid {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+.errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.line {
+  display: inline-block;
+  color: #b71919;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 100px;
+  animation: text 3s ease-in-out linear;
+}
+
+@media (width <= 425px) {
+  .section {
+    padding-top: 5vh;
+    max-width: 300px;
+    margin-top: 5rem;
+  }
+}

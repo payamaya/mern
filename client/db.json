@@ -1,0 +1,94 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "accent chair",
+      "price": 450,
+      "image": "https://images.unsplash.com/photo-1481931098730-318b6f776db0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=780&q=80"
+    },
+    {
+      "id": "2",
+      "name": "bany sectional",
+      "price": 150,
+      "image": "https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+    },
+    {
+      "id": "3",
+      "name": "calbany table",
+      "price": 5550,
+      "image": "https://plus.unsplash.com/premium_photo-1669931367700-e4e1e0387d40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=868&q=80"
+    },
+    {
+      "id": "4",
+      "name": "garmchair",
+      "price": 950,
+      "image": " https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=820&q=80"
+    },
+    {
+      "id": "5",
+      "name": "mar stool",
+      "price": 1799,
+      "image": "https://images.unsplash.com/photo-1580852300513-9b50125bf293?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Y2FtZXJhJTIwbGVuc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60"
+    },
+    {
+      "id": "6",
+      "name": "sccent chair",
+      "price": 3000,
+      "image": "https://images.unsplash.com/photo-1481931098730-318b6f776db0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=780&q=80"
+    },
+    {
+      "id": "7",
+      "name": "vlbany sectional",
+      "price": 2150,
+      "image": "https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+    },
+    {
+      "id": "8",
+      "name": "wlbany table",
+      "price": 3550,
+      "image": "https://plus.unsplash.com/premium_photo-1669931367700-e4e1e0387d40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=868&q=80"
+    },
+    {
+      "id": "9",
+      "name": "zrmchair",
+      "price": 4550,
+      "image": " https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=820&q=80"
+    }
+  ],
+  "register": [
+    {
+      "id": "1",
+      "name": ""
+    },
+    {
+      "user": "asasd",
+      "pwd": "Paul@1234",
+      "id": "2w-VH3z"
+    },
+    {
+      "user": "paul12",
+      "pwd": "Paul@1234",
+      "id": "8zY09JW"
+    },
+    {
+      "user": "Pasd",
+      "pwd": "Paul@1234",
+      "id": "1HZm8le"
+    },
+    {
+      "user": "Paulyas",
+      "pwd": "Paul@1234",
+      "id": "tlIZNqA"
+    },
+    {
+      "username": "paul-123",
+      "password": "Paul@123",
+      "id": "36Uq9lk"
+    },
+    {
+      "username": "paul-123",
+      "password": "Paul@123",
+      "id": "y7nZK2T"
+    }
+  ]
+}

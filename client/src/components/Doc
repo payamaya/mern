@@ -1,0 +1,3 @@
+Component folder are the core building blocks of our react project
+This folder contain the UI like : models, loaders, search-bar, cards etc.... that can be used across the various files in the project
+The files inside the component must begin With Capital letter

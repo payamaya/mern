@@ -1,0 +1,1 @@
+In this folder we can store the header, footer, main sidebar files all the layout that we need in the project
