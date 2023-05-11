@@ -20,6 +20,7 @@ import {
   SignUp,
   Cart,
   NewProductsItems,
+  Chat
 } from './pages/index'
 import Navbar from './layouts/navbar/Navbar'
 import Footer from './layouts/footer/Footer'
@@ -134,6 +135,7 @@ function App() {
             {/* this route will match only when no other routes do, can display a content on the page by making this route <Route>Here you can display any element you wish, or you can make a new page just for Nomatch route</Route>*/}
             <Route path='*' element={<NoMatch />} />
           </Routes>
+          <Chat />
           <Footer />
           {/*the footer component goes her <Footer></Footer> */}
         </AuthProvider>

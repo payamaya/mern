@@ -1,0 +1,26 @@
+dialogflow Your write exactly how your conversation would look like using intent
+welcome 
+how are you
+ fine
+no matched intent
+iam fine
+please give me reactjs book
+please give me python book
+please give me javascript book
+please give me django book
+I want a programming book
+React JS
+React
+What is React JS ?
+Please buy me a book for tomorrow from New York
+I have bought you the book for $date-time and from $geo-city
+Please buy me a book for today
+I have bought the book for $date-time
+Are your sure you want to cancel your programming book ?
+I want to cancel the programming book
+<!-- ------------------ -->
+User: How are you?
+Agent: Wonderful as always. Thanks for asking.
+
+User: You're so sweet.
+Agent: Thanks! The feeling is mutual.

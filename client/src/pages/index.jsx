@@ -15,6 +15,7 @@ import FAQ from './faq/FAQ'
 import Contact from './Contact'
 import SignUp from './SignUp'
 import Cart from './Cart'
+import Chat from '../components/Chat'
 
 import NewProductsItems from './product/NewProductItems'
 const LazyAbout = lazy(() => import('./about/About'))
@@ -38,5 +39,6 @@ export {
   SignUp,
   Cart,
   NewProductsItems,
+  Chat
 
 }
