@@ -9,6 +9,8 @@ import { userRouter } from '../Routes/users.js'
 
 import dotenv from 'dotenv'
 dotenv.config()
+
+
 const app = express()
 // middleware and converted into json that we get from the frontend
 app.use(express.json())
@@ -21,6 +23,23 @@ app.use(
   //   credentials: true,
   // }
 )
+app.post('/checkou', async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    line_items: [
+      {
+        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+        // price: '{{PRICE_ID}}',
+        price: 50000,
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: `${YOUR_DOMAIN}?success=true`,
+    cancel_url: `${YOUR_DOMAIN}?canceled=true`,
+  })
+
+  res.redirect(303, session.url)
+})
 
 // end points that are related to authentication
 app.use('/auth', userRouter)

@@ -89,7 +89,7 @@ const Products = () => {
         <section className='product__section'>
           <div className='product-head__container'>
             <h2>Products Page</h2>
-
+             {/* search bar */}
             <form className='search' onSubmit={handleSubmit}>
               <label htmlFor='search' />
               <input
@@ -110,35 +110,37 @@ const Products = () => {
           {/* <select name='sort' id='' onChange={sortId}> */}
 
           {/* </select> */}
-          <div className='navbar-dropdown'>
-            <div className='dropdown-sorting'>
-              <button className='dropbtn'>
-                Sorting List
-                <FiChevronDown />
-              </button>
-              {/* <div className='dropdown-btn'></div> */}
-              <div className='dropdown-content'>
-                <Link value='sort' onClick={sortByHighPrice}>
-                  Sort low Price
-                </Link>
-                <Link value='sort' onClick={sortByLowPrice}>
-                  Sort by high Price
-                </Link>
-                <Link value='sort' onClick={ascendingEvent}>
-                  a-z
-                </Link>
-                <Link value='sort' onClick={descendingEvent}>
-                  z-a
-                </Link>
+          <div className="dropdown-container__sort">
+            <div className='navbar-dropdown'>
+              <div className='dropdown-sorting'>
+                <button className='dropbtn'>
+                  Sorting List
+                  <FiChevronDown />
+                </button>
+                {/* <div className='dropdown-btn'></div> */}
+                <div className='dropdown-content'>
+                  <Link value='sort' onClick={sortByHighPrice}>
+                    Sort low Price
+                  </Link>
+                  <Link value='sort' onClick={sortByLowPrice}>
+                    Sort by high Price
+                  </Link>
+                  <Link value='sort' onClick={ascendingEvent}>
+                    a-z
+                  </Link>
+                  <Link value='sort' onClick={descendingEvent}>
+                    z-a
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-          <div className='secondary-nav'>
-            <nav className='nav-link'>
-              {/* the link route must be fixed */}
-              <Link to='/products'>Featured</Link>
-              <Link to='new'>New</Link>
-            </nav>
+            <div className='secondary-nav'>
+              <nav className='nav-link'>
+                {/* the link route must be fixed */}
+                <Link to='/products'>Featured</Link>
+                <Link to='new'>New</Link>
+              </nav>
+            </div>
           </div>
           {/* outlet displays here can be anywhere else as well in this case is the */}
 
@@ -172,7 +174,11 @@ const Products = () => {
                                   </button>
                                   <section className='cartItem-card'>
                                     <div className='cartItem'>
-                                      <img src={image || avatar} alt={name} />
+                                      <img
+                                        src={image || avatar}
+                                        alt={name}
+                                        className='skeleton'
+                                      />
                                       <div className='description-items__container'>
                                         <div className='description'>
                                           <p>Name: {name}</p>
@@ -198,17 +204,17 @@ const Products = () => {
                         </div>
                         <ul className='product__ul '>
                           <figure className='product-card__image skeleton'>
-                            <img src={image} alt={name} />
+                            <img src={image || avatar} alt={name} />
                           </figure>
                           <div className='product__price-container'>
-                          <p className='product__name'>{name}</p>
+                            <p className='product__name'>{name}</p>
                             <GoInfo
                               onClick={toggleModal}
                               className='btn-modal__info'
                               to={`products/${id}`}
                             />
                           </div>
-                            <p className='product__price'>{price}</p>
+                          <p className='product__price'>{price}</p>
                           <div className='products__btn-wrapper'>
                             {/* <Buttons
                         variant='secondary'

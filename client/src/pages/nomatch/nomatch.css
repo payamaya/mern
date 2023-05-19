@@ -1,0 +1,12 @@
+.nomatch {
+  display: grid;
+  min-height: 60vh;
+  place-items: center;
+  padding:0;
+}
+.error-num {
+  font-size: 15rem;
+}
+.error-page {
+  font-size: 13rem;
+}

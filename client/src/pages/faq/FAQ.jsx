@@ -16,10 +16,10 @@ const FAQ = () => {
      hiddenElements.forEach((element) => observer.observe(element))
    }, [])
 
-   const hiddenElements = document.querySelectorAll('.hidden')
-   hiddenElements.forEach((element) => observer.observe(element))
+  //  const hiddenElements = document.querySelectorAll('.hidden')
+  //  hiddenElements.forEach((element) => observer.observe(element))
   return (
-    <section>
+    <section className='fqa__wrapper'>
       <div className='faq-header'>
         <div className='faq-header__para'>
           <h1>Shopify FAQ </h1>

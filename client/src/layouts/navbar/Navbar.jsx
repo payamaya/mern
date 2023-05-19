@@ -132,20 +132,29 @@ import filmlogo2 from '../../assets/filmlogo2.svg'
 import Quantity from '../../pages/product/Quantity'
 import React, { useContext } from 'react'
 import { ShopContext } from '../../context/CartContext'
+import { useAuth } from '../../components/utils/auth'
 // import DarkMode from '../../components/darkMode/DarkMode'
 // import { FcFilmReel } from 'react-icons/fc'
 // import Dropdown from '../../components/dropdown/Dropdown'
 const Navbar = () => {
+  const auth = useAuth()
   const { cartItems } = useContext(ShopContext)
   const [showMenu, setShowMenu] = useState(false)
   // const onClick = () => setShowMenu(!showMenu)
   const handleClick = (event) => {
     event.currentTarget.classList.toggle('showMenu')
   }
+    const handleLogout = (e) => {
+      e.preventDefault()
+      // we call auth.logout to log out onclick event
+      auth.logout()
+      // then we direct user to home page using navigate
+      navigate('/')
+    }
   return (
     <header className='navbar__container'>
       <nav className='primary-nav'>
-        <NavLink onClick={'#'} to='/'>
+        <NavLink  to='/'>
           {/* <FcFilmReel className='cameralight-menu' /> */}
           <img src={filmlogo} alt={filmlogo} className='cameralight-menu' />
         </NavLink>
@@ -157,6 +166,13 @@ const Navbar = () => {
               </ul>
             )
           })}
+        {!auth.user ? (
+          <NavLink to='/login'>Login</NavLink>
+        ) : (
+          <NavLink to='/logout' onClick={handleLogout}>
+            logout
+          </NavLink>
+        )}
         <Link to='/cart'>
           <Quantity value={cartItems} />
         </Link>
@@ -190,7 +206,8 @@ const Navbar = () => {
                 <ul className='menu-mobile' key={index}>
                   <NavLink
                     onClick={() => setShowMenu(!showMenu)}
-                    to={item.link}>
+                    to={item.link}
+                  >
                     {item.title}
                   </NavLink>
                 </ul>

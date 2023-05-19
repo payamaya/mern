@@ -1,9 +1,10 @@
 import { useRef, useState, useEffect } from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { useCookies } from 'react-cookie'
 import { Slide, ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { useAuth } from '../../../components/utils/auth'
 
 // import axios from '../../../api/axios'
 // const LOGIN_URL = 'baseURL/auth/login'
@@ -16,11 +17,15 @@ const Login = () => {
   //      theme: 'dark',
   //    })
   const navigate = useNavigate()
+  const location = useLocation()
+  const redirectPath = location.state?.path || '/'
   const [cookies, setCookies] = useCookies(['access_token'])
   const userRef = useRef()
   const errRef = useRef()
 
   const [username, setUsername] = useState('')
+  //
+  // const [user, setUser] = useState('')
   // const [validName, setValidName] = useState(false)
   // const [userFocus, setUserFocus] = useState(false)
 
@@ -48,6 +53,7 @@ const Login = () => {
   //   setErrMsg('')
   // }, [username, password])
 
+  const auth = useAuth()
   const handleSubmit = async (e) => {
     e.preventDefault()
     // alert('click')
@@ -59,6 +65,7 @@ const Login = () => {
     //   return
     // }
     // try {
+    auth.login(username)
     const response = await axios.post(LOGIN_URL, { username, password })
     setCookies('access_token', response.data.token)
     // userID we get from  res.json({token, userID: user._id})in the users.js
@@ -70,7 +77,7 @@ const Login = () => {
       toast.success('successfully')
       // console.log('wrong password username')
       setTimeout(() => {
-        navigate('/')
+        navigate(redirectPath, { replace: true })
       }, 3000)
     } else {
       toast.error('wrong password username')
@@ -100,12 +107,7 @@ const Login = () => {
         <section>
           <h1>Something went wrong!</h1>
           <p>
-            <a
-              href='/
-            '
-            >
-              welcome home
-            </a>
+            <a href='/'>welcome home</a>
           </p>
         </section>
       ) : (
@@ -130,6 +132,7 @@ const Login = () => {
               ref={userRef}
               autoComplete='off'
               onChange={(e) => setUsername(e.target.value)}
+              // onChange={(e) => setUser(e.target.value)}
               value={username}
               required
               // aria-invalid={validName ? 'false' : 'true'}
@@ -164,7 +167,7 @@ const Login = () => {
               className='register__btn'
               // disabled={!validName || !validPwd || !validMatch ? true : false}
             >
-              Sign Up
+              Login
             </button>
             <ToastContainer
               transition={Slide}

@@ -26,8 +26,8 @@ const Home = () => {
     hiddenElements.forEach((element) => observer.observe(element))
   }, [])
 
-  const hiddenElements = document.querySelectorAll('.hidden')
-  hiddenElements.forEach((element) => observer.observe(element))
+  // const hiddenElements = document.querySelectorAll('.hidden')
+  // hiddenElements.forEach((element) => observer.observe(element))
   return (
     <div className='main-container'>
       {/* <div className='image-wrapper'>
@@ -99,7 +99,10 @@ const Home = () => {
             Channel (US), RTL (DE), NHK (JP) Thomas Cook UK, the British Armed
             Forces and many more small and large companies.
           </p>
-          <Buttons variant='dark' size='xl'>
+          {/* <Buttons variant='dark' size='xl'>
+            Learn More
+          </Buttons> */}
+          <Buttons variant='dark' size='xl' onClick={() => navigate('/login')}>
             Learn More
           </Buttons>
         </div>

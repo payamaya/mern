@@ -31,17 +31,19 @@ const OrderSummary = () => {
   }
   return (
     <section className='checkout-section'>
-      <h1>OrderSummary confirm</h1>
+      <h1 className='checkout-section__header'>OrderSummary confirm</h1>
       {/* <h1>Use Split for payment</h1> */}
       <h1>Total Amount: ${totalAmount}</h1>
       {/*we pass the path route we wish to navigate to in this case we are navigating back to home('/') navigate('-1') */}
       <TabButton />
-      <button className='checkout-btn' onClick={() => navigate(-1)}>
-        Go back
-      </button>
-      <button className='checkout-btn' onClick={checkout} navigate='/success'>
-        checkout
-      </button>
+      <div className="checkout-btn__wrapper">
+        <button className='checkout-btn' onClick={() => navigate(-1)}>
+          Go back
+        </button>
+        <button className='checkout-btn' onClick={checkout} navigate='/success'>
+          checkout
+        </button>
+      </div>
       <Link className='cart-link' to='/split'>
         {/* same css as the cart link to write less code  */}
         Confirm

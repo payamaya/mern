@@ -4,6 +4,8 @@
   align-items: center;
   justify-content: center;
   margin-top: 2rem;
+  min-height: 60vh;
+  padding-top: 10vh;
 }
 .section {
   width: 100%;

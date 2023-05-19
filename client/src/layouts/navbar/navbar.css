@@ -206,12 +206,8 @@ nav a:hover {
   }
   /**------------HAMBURGER-MENU------------ */
 }
+
 @media (766px >= width) {
-  .menu-icon__container {
-    border: 2px solid var(--WHITE-COLOR);
-    box-shadow: var(--SHADOWS);
-    max-width: 766px;
-  }
     .cameralight-menu{
     width: 4em;
     height: 4em;
@@ -220,6 +216,9 @@ nav a:hover {
 @media (425px >= width) {
   .menu-icon__container {
     max-width: 425px;
+  }
+  .menu-mobile__container{
+    margin-top: 10vh;
   }
 
 }

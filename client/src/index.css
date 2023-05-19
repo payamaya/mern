@@ -12,7 +12,7 @@
 
   /* COLOR */
   --BODY-BG-COLOR: #1c75db;
-  --DARK-COLOR: #111111;
+  --WHITE-COLOR: #f5f5f5;
   --LIGHT-COLOR: #000000;
   --DARK-COLOR: #4b4b4b;
   --LETTER-COLOR: #444444;
@@ -31,7 +31,7 @@
   --SHADOWS: 0px 3px 15px rgba(0, 0, 0, 0.421);
   --PRIMARY-SHADOWS: 0px 3px 15px rgba(0, 0, 0, 0.6);
   /* -----------------navbar-anchor-color-------------- */
-  --WHITE-COLOR: #030303;
+  /* --WHITE-COLOR: #030303; */
   --ALT-DARK-COLOR: #02083f;
   /* -------------navbar-color----------------- */
   --NAV-COLOR: #0b6ccc;
@@ -87,7 +87,7 @@
     --PRIMARY-SHADOWS: 0px 3px 15px rgba(0, 0, 0, 0.6);
     /* MODAL */
     /* --------------------------CARD-------------------- */
-    --CARD-BG: #00061b;
+    --CARD-BG: #000000;
     --MODAL-BG: #00061b;
     --MODAL-OVERLAY: #00061bde;
     /* --MODAL-BG: #515151; */
@@ -140,6 +140,10 @@ h6 {
 h1 {
   font-size: 3.2rem;
   line-height: 1.1;
+  color: var( --WHITE-COLOR);
+}
+P{
+  color: var( --WHITE-COLOR);
 }
 .section__padding {
   padding: 2rem 4rem;
@@ -202,6 +206,9 @@ when you inspect the link element you can see it as an anchor tag within an hfre
   border-radius: 50%;
   background-color: red green yellow purple;
   animation: ring 2s linear infinite;
+}
+.loading{
+  font-size: 3rem;
 }
 @keyframes ring {
   0% {

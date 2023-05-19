@@ -42,7 +42,36 @@ router.post('/login', async (req, res) => {
   const token = jwt.sign({ id: user._id }, process.env.SECRET_KEY)
   res.json({ token, userID: user._id })
 })
+router.post('/checkout', async (req, res) => {
+  // req.boy.items
 
+  const items = req.body.items
+  let lineItems = []
+  items.forEach((item) => {
+    lineItems.push({
+      price: item.id,
+      quantity: item.quantity,
+    })
+  })
+
+  // CREATE A SESSION TO SEND THE URL BACK TO THE FRONFTEND
+  const session = await stripe.checkout.session.create({
+    line_items: lineItems,
+    mode: 'payment',
+    success_url: 'http://localhost:5174/succes',
+    cancel_url: 'http://localhost:5173/products',
+  })
+
+  res.send(
+    JSON.stringify({
+      url: session.url,
+    })
+  )
+})
+// Ite can be any port 8081 for signup/login
+// app.listen(8081, () => console.log('Listening on port 8081!'))
+// // Ite can be any port 3500 for stripe
+// app.listen(4000, () => console.log('Listening on port 4000!'))
 // we change router name since we will have many router
 
 export { router as userRouter }

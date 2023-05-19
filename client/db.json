@@ -58,37 +58,44 @@
   "register": [
     {
       "id": "1",
-      "name": ""
+      "name": "paul"
     },
     {
-      "user": "asasd",
-      "pwd": "Paul@1234",
-      "id": "2w-VH3z"
+      "name": "paul-1",
+      "email": "paul@123",
+      "id": "ada5c28a-432f-4925-b4f4-615617df0013"
     },
     {
-      "user": "paul12",
-      "pwd": "Paul@1234",
-      "id": "8zY09JW"
+      "name": "rytre",
+      "email": "reterte",
+      "id": "bac9e17f-6a25-467f-bcc6-f0c75f87ffdc"
     },
     {
-      "user": "Pasd",
-      "pwd": "Paul@1234",
-      "id": "1HZm8le"
+      "name": "dfsfs",
+      "email": "sdfsd",
+      "id": "bf88e071-12b0-4ee9-af49-71fb4331732d"
     },
     {
-      "user": "Paulyas",
-      "pwd": "Paul@1234",
-      "id": "tlIZNqA"
+      "name": "asda",
+      "email": "asdasd",
+      "id": "181a554d-c3e2-445c-8a91-4e7ecbc67242"
     },
     {
-      "username": "paul-123",
-      "password": "Paul@123",
-      "id": "36Uq9lk"
+      "name": "fh",
+      "email": "cvbncvb",
+      "id": "0d7efa2e-ce74-4839-b17a-8fd6ca0d9ca8"
     },
     {
-      "username": "paul-123",
-      "password": "Paul@123",
-      "id": "y7nZK2T"
+      "user": "werwer",
+      "pwd": "Paul@123",
+      "id": "qwm9YvH"
+    }
+  ],
+  "post": [
+    {
+      "id": "1",
+      "name": "paul",
+      "email": "paul@yashou@gmail.com"
     }
   ]
 }

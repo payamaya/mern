@@ -1,3 +1,6 @@
+.fqa__wrapper{
+
+}
 .faq-header {
   background: var( --BODY-BG-COLOR);
   padding: 2rem;
@@ -15,10 +18,13 @@
   word-wrap: 10ch;
   line-height: 2.5rem;
   padding: 4rem;
+  color: var(--LIGHT-COLOR);
+  margin-top: 8rem;
 }
 .faq-header__para h1 {
   font-size: 3rem;
   padding-bottom: 2rem;
+  color: var(--LIGHT-COLOR);
 }
 .faq-header-img {
   zoom: 2;
@@ -41,7 +47,8 @@
  align-content: flex-start;
 }
 .faq-conatiner{
-  background: var(  --ALT-LIGHT-COLOR);
+  background-color: var(--BG-COLOR);
+  margin-bottom: 2rem;
 }
 .faq-main {
   display: flex;
@@ -52,12 +59,15 @@
   align-content: center;
   border: 2px white solid;
   width: auto;
+  color: var(--LIGHT-COLOR);
 }
 .faq-main__wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  font-size: 1.6rem;
+  
 }
 .faq-main-para {
   display: flex;
@@ -66,10 +76,13 @@
   width: 70vw;
   box-shadow: var(--SHADOWS);
   gap: 2rem;
+  color: var(--LIGHT-COLOR);
 }
+
 .faq-main-para h3{
  font-size: 1.8rem;
  padding-bottom: 2rem;
+ color: var(--LIGHT-COLOR);
 }
 .faq-main__head {
   font-size: 4rem;
@@ -78,11 +91,13 @@
   align-content: center;
   justify-content: center;
   padding: 1rem;
+  color: var(--LIGHT-COLOR);
 }
 .faq-main__sidebar {
   display: flex;
   font-size: 1.4rem;
   width: 20%;
+  color: var(--LIGHT-COLOR);
 }
 @media screen and (max-width: 900px) {
   .faq-header__para {

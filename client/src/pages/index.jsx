@@ -4,8 +4,8 @@ import Admin from '../pages/Admin'
 import SingleProduct from '../pages/product/SingleProduct'
 // import Products from '../pages/product/Products'
 import NewProducts from '../pages/product/NewProducts'
-import Home from './Home'
-import NoMatch from './NoMatch'
+import Home from './home/index'
+import NoMatch from './nomatch/NoMatch'
 import OrderSummary from './checkout/OrderSummary'
 import Users from './Users'
 import UserDetails from './UserDetails'
@@ -16,6 +16,7 @@ import Contact from './Contact'
 import SignUp from './SignUp'
 import Cart from './Cart'
 import Chat from '../components/Chat'
+import Checkout from './checkout/Checkout'
 
 import NewProductsItems from './product/NewProductItems'
 const LazyAbout = lazy(() => import('./about/About'))
@@ -39,6 +40,7 @@ export {
   SignUp,
   Cart,
   NewProductsItems,
-  Chat
+  Chat,
+  Checkout
 
 }

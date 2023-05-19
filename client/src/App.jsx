@@ -20,7 +20,8 @@ import {
   SignUp,
   Cart,
   NewProductsItems,
-  Chat
+  Chat,
+  Checkout
 } from './pages/index'
 import Navbar from './layouts/navbar/Navbar'
 import Footer from './layouts/footer/Footer'
@@ -119,7 +120,6 @@ function App() {
               path='profile'
               element={
                 <RequireAuth>
-                  {''}
                   <Profile />
                 </RequireAuth>
               }
@@ -131,6 +131,7 @@ function App() {
             <Route path='faq' element={<FAQ />} />
             <Route path='cart' element={<Cart />} />
             <Route path='contact' element={<Contact />} />
+            <Route path='checkout' element={<Checkout />} />
 
             {/* this route will match only when no other routes do, can display a content on the page by making this route <Route>Here you can display any element you wish, or you can make a new page just for Nomatch route</Route>*/}
             <Route path='*' element={<NoMatch />} />

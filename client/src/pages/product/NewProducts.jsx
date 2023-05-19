@@ -6,6 +6,7 @@ import getName from '../../api/api'
 import { useState, useEffect } from 'react'
 import Buttons from '../../components/button/Buttons'
 import { GoInfo } from 'react-icons/go'
+import avatar from '../../assets/avatar.svg'
 
 const NewProducts = () => {
   const [items, setItems] = useState([])
@@ -73,7 +74,7 @@ const NewProducts = () => {
                                     <p className='product__price'>
                                       Price: ${price}
                                     </p>
-                                    <p>{id}</p>
+                                    {/* <p>{id}</p> */}
 
                                     <Link
                                       className='single-product__link'
@@ -91,11 +92,18 @@ const NewProducts = () => {
                     )}
                   </div>
                   <ul className='product__ul '>
-                    <li className='product__list'>{name}</li>
                     <figure className='product-card__image skeleton'>
-                      <img src={image} alt={name} />
+                      <img src={image || avatar} alt={name} />
                     </figure>
-                    <p>{price}</p>
+                    <div className='product__price-container'>
+                      <p className='product__name'>{name}</p>
+                      <GoInfo
+                        onClick={toggleModal}
+                        className='btn-modal__info'
+                        to={`products/${id}`}
+                      />
+                    </div>
+                    <p className='product__price'>{price}</p>
                     <div className='products__btn-wrapper'>
                       {/* <Buttons
                         variant='secondary'
@@ -112,11 +120,6 @@ const NewProducts = () => {
                       >
                         Add to Cart
                       </Buttons>
-                      <GoInfo
-                        onClick={toggleModal}
-                        className='btn-modal__info'
-                        to={`products/${id}`}
-                      />
                     </div>
                   </ul>
                 </div>

@@ -1,3 +1,9 @@
+.dropdown-container__sort{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  padding-inline: 4rem;
+}
 .product__price-container {
   display: flex;
   gap: 2rem;
@@ -298,6 +304,8 @@ section .product-page__wrapper {
   font-family: inherit;
   width: 160px;
   margin-left: 1rem;
+  border-bottom: 1px solid var(--DARK-COLOR);
+
 }
 
 .navbar-dropdown a:hover,
@@ -308,7 +316,7 @@ section .product-page__wrapper {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: var(--LIGHT-COLOR);
+  background-color: var(--DARK-COLOR);
   width: 150px;
   box-shadow: var(--SHADOWS);
   z-index: 1;
@@ -340,15 +348,19 @@ section .product-page__wrapper {
 } */
 /* adding skelton effect */
 .skeleton {
-  animation: skeleton-loading s linear infinite alternate;
+  animation: skeleton-loading 1s linear infinite alternate;
+  border-radius: 5px;
 }
 
 @keyframes skeleton-loading {
   0% {
-    background-color: hsl(200, 20%, 80%);
+    background-color: hsl(0, 0%, 95%);
+  }
+  50% {
+    background-color: hsl(0, 1%, 54%);
   }
   100% {
-    background-color: hsl(200, 20%, 95%);
+    background-color: hsl(0, 1%, 31%);
   }
 }
 

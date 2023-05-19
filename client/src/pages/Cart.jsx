@@ -42,7 +42,7 @@ const Cart = () => {
   // }, [])
   return (
     <div className='cart'>
-      <div>
+      <div className='cart-title'>
         <h1>Cart items</h1>
       </div>
       {/* <section className='cart-section__wrapper'> */}
@@ -66,8 +66,8 @@ const Cart = () => {
         </div> */}
       {/* </section> */}
 {/* HERE WE DISPLAY THE FINAL AMMOUNT AND QUANTITY TO CHECKOUT */}
-      <h1>Items</h1>
       <div className='checkout'>
+      <h1>Items</h1>
         <div className='checkout-container'>
           <p>Total Amount: ${totalAmount}</p>
           <p>

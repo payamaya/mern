@@ -1,13 +1,13 @@
 import { useEffect } from 'react'
 const chat = () => {
-  // const API_ENDPOINT=`${rocess.env.REACT_APP_API_ID}`
+  // const API_ENDPOINT=`${process.env.REACT_APP_API_ID}`
   useEffect(() => {
     return (function (d, m) {
       var kommunicateSettings = {
         appId: '5df39f3cd79bd672eee63c9a5a286bc6',
         popupWidget: true,
         voiceOutput: true,
-        voiceName: 'Google UK English Female',
+        voiceName: 'Google UK English female',
         voiceRate: 1,
         automaticChatOpenOnNavigation: true,
       }
@@ -21,12 +21,11 @@ const chat = () => {
       m._globals = kommunicateSettings
     })(document, window.kommunicate || {})
     /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
-  },[])
+  }, [])
   return (
-    <div>
-      {' '}
-      <h1>this is our chatbot agent</h1>
-    </div>
+    <>
+   
+    </>
   )
 }
 export default chat

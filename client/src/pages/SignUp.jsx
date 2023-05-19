@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { v4 as uuidv4} from 'uuid'
-const url = 'http://localhost:3500/posts'
+const url = 'http://localhost:3500/register'
 const SignUp = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')

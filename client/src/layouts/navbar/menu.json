@@ -24,11 +24,6 @@
       "id": 5,
       "title": "Register",
       "link": "/register"
-    },
-    {
-      "id": 6,
-      "title": "Login",
-      "link": "/auth/login"
     }
   ],
   "hamburgareMenu": [

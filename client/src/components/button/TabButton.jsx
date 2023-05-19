@@ -4,14 +4,20 @@ import { useState } from 'react'
 const Tab = styled.button`
   padding: 10px 60px;
   cursor: pointer;
+  color: var(--WHITE-COLOR);
   opacity: 0.6;
   background-color: transparent;
   gap: 1rem;
   border: 0;
   outline: 0;
+  font-size: 1.8rem;
+  margin-top: 4rem;
+  &:hover {
+    color: var(--DARK-MODE);
+  }
   ${({ active }) =>
     active &&
-    `border-bottom: 2px solid black;
+    `border-bottom: 2px solid var(--DARK-COLOR);
   opacity:1;`}
 `
 const types = ['Cash', 'Credit Card', 'Bitcoin']
