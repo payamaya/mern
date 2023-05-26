@@ -10,13 +10,14 @@ import OrderSummary from './checkout/OrderSummary'
 import Users from './Users'
 import UserDetails from './UserDetails'
 import SharedLayout from './SharedLayout'
-import Featured from './Featured'
+import Featured from './featured/Featured'
 import FAQ from './faq/FAQ'
 import Contact from './Contact'
 import SignUp from './SignUp'
 import Cart from './Cart'
 import Chat from '../components/Chat'
 import Checkout from './checkout/Checkout'
+import PrivacyPolicy from './privacy/PrivacyPolicy'
 
 import NewProductsItems from './product/NewProductItems'
 const LazyAbout = lazy(() => import('./about/About'))
@@ -41,6 +42,7 @@ export {
   Cart,
   NewProductsItems,
   Chat,
-  Checkout
+  Checkout,
+  PrivacyPolicy
 
 }

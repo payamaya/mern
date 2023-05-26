@@ -1,0 +1,36 @@
+.privacy__container {
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  font-size: 5rem;
+  padding-inline: 6rem;
+}
+.cookies__container {
+  min-height: 5vh;
+}
+.cookies__container h1 {
+  min-height: 5vh;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+/* .privacy-link {
+  color: rgb(91, 91, 91);
+} */
+.privacy-link:hover {
+  color: rgb(224, 0, 0);
+}
+.cookies-para {
+  flex-wrap: wrap;
+}
+.privacy-para {
+  font-size: clamp(3.5rem, 2.5vw, 1rem);
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 5rem;
+}
+.privacy-header {
+  font-size: 6rem;
+  padding-top: 15rem;
+}

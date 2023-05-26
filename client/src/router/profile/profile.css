@@ -17,3 +17,21 @@
   top: 18rem;
   right: 5rem;
 }
+.profile__container{
+  display: flex;
+  flex-wrap: wrap;
+
+
+}
+.profile__container-wrapper{
+   display: flex;
+  flex-wrap: wrap;
+  border: 2px solid red;
+}
+.profile-username{
+  font-size: 3rem;
+}
+.profile-span{
+  color: var(--DARK-COLOR);
+  font-weight: 800;
+}

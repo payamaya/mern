@@ -1,8 +1,13 @@
-import express from 'express'
-import jwt from 'jsonwebtoken'
-import bcrypt from 'bcrypt'
-import { UserModel } from '../models/Users.js'
+// import express from 'express'
+// import jwt from 'jsonwebtoken'
+// import bcrypt from 'bcrypt'
+// import { UserModel } from '../models/Users.js'
 
+const express = require('express')
+const mongoose= require('mongoose')
+const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt')
+const UserSchema = require('../models/Users')
 const router = express.Router()
 
 // we sen information to the frontend
@@ -10,14 +15,15 @@ router.post('/register', async (req, res) => {
   const { username, password } = req.body
   // username can be shorten to {(username})
   // can use dot then notation otherweise { username: username }
-  const user = await UserModel.findOne({ username })
+  const user = await UserSchema.findOne({ username })
   if (user) {
     return res.json({ data: 'User already exists!', user })
   }
+  // Generat a salt
   // we hash password
   const hashedPassword = await bcrypt.hash(password, 10)
   // add data to database
-  const newUser = new UserModel({ username, password: hashedPassword })
+  const newUser = new UserSchema({ username, password: hashedPassword })
   // make chages by adding newUser
   await newUser.save()
   // if successful return a message
@@ -27,7 +33,7 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
   const { username, password } = req.body
   // can use dot then notation otherweise { username: username }
-  const user = await UserModel.findOne({ username })
+  const user = await UserSchema.findOne({ username })
   if (!user) {
     return res.json({ message: 'User Doesnt Exist!' })
   }
@@ -68,10 +74,13 @@ router.post('/checkout', async (req, res) => {
     })
   )
 })
+
 // Ite can be any port 8081 for signup/login
 // app.listen(8081, () => console.log('Listening on port 8081!'))
 // // Ite can be any port 3500 for stripe
 // app.listen(4000, () => console.log('Listening on port 4000!'))
 // we change router name since we will have many router
 
-export { router as userRouter }
+// export { router as userRouter }
+module.exports= router
+// module.exports = mongoose.model('users', UserSchema)

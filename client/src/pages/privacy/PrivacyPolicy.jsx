@@ -1,0 +1,6 @@
+import '../privacy/privacy.css'
+const PrivacyPolicy = () => {
+  return <div className='privacy__container'><h1 className='privacy-header'>PrivacyPolicy</h1>
+  <p className='privacy-para'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi ipsam maiores ipsa, aut quia officiis. Soluta qui consequatur unde repellendus cum saepe odit, sint non dolore, quam temporibus ipsa autem ad quisquam aperiam officia illo similique. A magni veniam eveniet voluptates quidem id architecto maxime, unde minus esse. Odit sunt minima cum ab! Excepturi, voluptatem explicabo nisi repellat soluta nihil eum possimus delectus laudantium, libero ipsam doloribus saepe. Laboriosam doloribus incidunt nemo amet dolorem? Minus minima delectus accusantium libero veniam deserunt, rem enim aspernatur debitis sapiente cumque neque officiis ea assumenda cupiditate corporis velit quae quasi molestias saepe sed laudantium odio! Mollitia eius earum quasi? Vitae sequi pariatur iusto sint? Culpa fugiat praesentium aspernatur autem veritatis. Quas consequatur sunt architecto tempore necessitatibus. Corrupti inventore sed corporis omnis magnam officia qui saepe quidem modi nulla. Qui earum ratione ad quam! Nostrum, odio. Adipisci quas magnam dolorem sed veritatis repudiandae sequi laborum!</p></div>;
+};
+export default PrivacyPolicy;

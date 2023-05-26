@@ -6,16 +6,9 @@ import { Slide, ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useAuth } from '../../../components/utils/auth'
 
-// import axios from '../../../api/axios'
-// const LOGIN_URL = 'baseURL/auth/login'
 const LOGIN_URL = 'http://localhost:5174/auth/login'
 // ------------------------------------------------------//
 const Login = () => {
-  //  const notify = () =>
-  //    toast.success('You succefully registered', {
-  //      position: toast.POSITION.TOP_LEFT,
-  //      theme: 'dark',
-  //    })
   const navigate = useNavigate()
   const location = useLocation()
   const redirectPath = location.state?.path || '/'
@@ -24,80 +17,37 @@ const Login = () => {
   const errRef = useRef()
 
   const [username, setUsername] = useState('')
-  //
-  // const [user, setUser] = useState('')
-  // const [validName, setValidName] = useState(false)
-  // const [userFocus, setUserFocus] = useState(false)
-
   const [password, setPassword] = useState('')
-  // const [validPwd, setValidPwd] = useState(false)
-  // const [pwdFocus, setPwdFocus] = useState(false)
-
-  // const [errMsg, setErrMsg] = useState('')
   const [success, setSuccess] = useState(false)
 
   useEffect(() => {
     userRef.current.focus()
   }, [])
 
-  // useEffect(() => {
-  //   setValidName(USER_REGEX.test(username))
-  // }, [username])
-
-  // useEffect(() => {
-  //   setValidPwd(PWD_REGEX.test(password))
-  //   setValidMatch(password === matchPwd)
-  // }, [password, matchPwd])
-
-  // useEffect(() => {
-  //   setErrMsg('')
-  // }, [username, password])
-
   const auth = useAuth()
   const handleSubmit = async (e) => {
     e.preventDefault()
-    // alert('click')
-    // if button enabled with JS hack
-    // const v1 = USER_REGEX.test(username)
-    // const v2 = PWD_REGEX.test(password)
-    // if (!v1 || !v2) {
-    //   setErrMsg('Invalid Entry')
-    //   return
-    // }
-    // try {
+
     auth.login(username)
     const response = await axios.post(LOGIN_URL, { username, password })
     setCookies('access_token', response.data.token)
     // userID we get from  res.json({token, userID: user._id})in the users.js
     window.localStorage.setItem('userID', response.data.userID)
-
     // setSuccess(true)
     if (response.data.userID) {
       // console.log('No Server Response')
       toast.success('successfully')
       // console.log('wrong password username')
       setTimeout(() => {
-        navigate(redirectPath, { replace: true })
+        navigate('/profile')
       }, 3000)
     } else {
+      localStorage.clear()
+      auth.logout()
       toast.error('wrong password username')
+      return
     }
-    // remove localstorage
-    // window.localStorage.removeItem('userID', response.data.userID)
-    // } catch (err) {
-    //   // catch must be fixed
-    //   if (!err.response.data.userID) {
-    //     navigate('/register')
-    //   }
-    // }
-
-    //  else if (err.response?.status === 409) {
-    //   setErrMsg('Username Taken')
-    // }
-    // else {
-    //   setErrMsg('Registration Failed')
-    // }
-    // errRef.current.focus()
+  
   }
 
   return (
@@ -112,13 +62,6 @@ const Login = () => {
         </section>
       ) : (
         <section className='section'>
-          {/* <p
-            ref={errRef}
-            className={errMsg ? 'errmsg' : 'offscreen'}
-            aria-live='assertive'
-          >
-            {errMsg}
-          </p> */}
           <h1>Login</h1>
           <form className='register__form' onSubmit={handleSubmit}>
             <label htmlFor='username' className='register__label'>
@@ -135,10 +78,6 @@ const Login = () => {
               // onChange={(e) => setUser(e.target.value)}
               value={username}
               required
-              // aria-invalid={validName ? 'false' : 'true'}
-              // aria-describedby='uidnote'
-              // onFocus={() => setUserFocus(true)}
-              // onBlur={() => setUserFocus(false)}
             />
 
             <label htmlFor='password' className='register__label'>
@@ -152,26 +91,14 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               value={password}
               required
-              // aria-invalid={validPwd ? 'false' : 'true'}
-              // aria-describedby='pwdnote'
-              // onFocus={() => setPwdFocus(true)}
-              // onBlur={() => setPwdFocus(false)}
             />
-            {/* <p
-              id='pwdnote'
-              className={pwdFocus && !validPwd ? 'instructions' : 'offscreen'}
-            ></p> */}
 
-            <button
-              onSubmit={handleSubmit}
-              className='register__btn'
-              // disabled={!validName || !validPwd || !validMatch ? true : false}
-            >
+            <button className='register__btn'>
               Login
             </button>
             <ToastContainer
               transition={Slide}
-              theme='colored'
+              theme='dark'
               limit={1}
             ></ToastContainer>
           </form>

@@ -88,8 +88,8 @@ const Products = () => {
       <div className='product-container'>
         <section className='product__section'>
           <div className='product-head__container'>
-            <h2>Products Page</h2>
-             {/* search bar */}
+            <h2 className='product-container__header'>Products Page</h2>
+            {/* search bar */}
             <form className='search' onSubmit={handleSubmit}>
               <label htmlFor='search' />
               <input
@@ -110,7 +110,7 @@ const Products = () => {
           {/* <select name='sort' id='' onChange={sortId}> */}
 
           {/* </select> */}
-          <div className="dropdown-container__sort">
+          <div className='dropdown-container__sort'>
             <div className='navbar-dropdown'>
               <div className='dropdown-sorting'>
                 <button className='dropbtn'>
@@ -144,7 +144,7 @@ const Products = () => {
           </div>
           {/* outlet displays here can be anywhere else as well in this case is the */}
 
-          <Outlet />
+          <Outlet /> 
           <div className=''>
             <div className='product-page__wrapper'>
               {items &&

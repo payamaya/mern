@@ -34,7 +34,7 @@ body.active-modal {
 }
 
 .overlay {
-  background: var(--MODAL-OVERLAY);
+  background: var(--OVERLAY-COLOR);
 }
 .modal-content {
   position: absolute;
@@ -42,7 +42,7 @@ body.active-modal {
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: 1.4;
-  background: var(--MODAL-BG);
+  background: var(--MODAL-CONTENT);
   padding: 14px 28px;
   border-radius: 15px;
   border: 2px solid white;

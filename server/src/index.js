@@ -1,15 +1,20 @@
 // a framework to create our API to serve our frontend
-import express from 'express'
+// import express from 'express'
+const express = require('express')
+const cors = require('cors')
+const mongoose = require('mongoose')
+const userRouter = require('../Routes/users.js')
 // library allows us to set up the rules between the communication between frontend and backend simultaneously to avoid error when makin api request from your react application to your own server
-import cors from 'cors'
+// import cors from 'cors'
 // mongoose is an arm for mongodb that will allow us to write community like queries and communications to our database
-import mongoose from 'mongoose'
+// import mongoose from 'mongoose'
 
-import { userRouter } from '../Routes/users.js'
+// import { userRouter } from '../Routes/users.js'
 
-import dotenv from 'dotenv'
+// import dotenv from 'dotenv'
+const dotenv = require('dotenv')
+const { default: items } = require('../models/Product.model.js')
 dotenv.config()
-
 
 const app = express()
 // middleware and converted into json that we get from the frontend
@@ -23,7 +28,7 @@ app.use(
   //   credentials: true,
   // }
 )
-app.post('/checkou', async (req, res) => {
+app.post('/checkout', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
@@ -46,7 +51,11 @@ app.use('/auth', userRouter)
 // MONGOOSE SETUP
 
 const PORT = process.env.PORT || 6001
-
+// get product
+// app.get('/books', (req, res) => {
+//   res.json({ message: 'wlc to the api' })
+//   console.log(req)
+// })
 mongoose
   .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,

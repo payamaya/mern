@@ -122,7 +122,7 @@
 // //NavLink is speciffically meant for building components like a navbar or breadcrumbs or a set of tabs where you would like to highlight the current seleted item and provide useful context with screen readers
 
 // // Absolute links make more sense for components like the primary navigation bar, Absolute links start with /
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useNavigate } from 'react-router-dom'
 import { menuItems, hamburgareMenu } from './menu.json'
 // import { GiHamburgerMenu } from 'react-icons/gi'
 import './navbar.css'
@@ -140,21 +140,22 @@ const Navbar = () => {
   const auth = useAuth()
   const { cartItems } = useContext(ShopContext)
   const [showMenu, setShowMenu] = useState(false)
+  const navigate = useNavigate()
   // const onClick = () => setShowMenu(!showMenu)
   const handleClick = (event) => {
     event.currentTarget.classList.toggle('showMenu')
   }
-    const handleLogout = (e) => {
-      e.preventDefault()
-      // we call auth.logout to log out onclick event
-      auth.logout()
-      // then we direct user to home page using navigate
-      navigate('/')
-    }
+  const handleLogout = (e) => {
+    e.preventDefault()
+    // we call auth.logout to log out onclick event
+    auth.logout()
+    // then we direct user to home page using navigate
+    navigate('/')
+  }
   return (
     <header className='navbar__container'>
       <nav className='primary-nav'>
-        <NavLink  to='/'>
+        <NavLink to='/'>
           {/* <FcFilmReel className='cameralight-menu' /> */}
           <img src={filmlogo} alt={filmlogo} className='cameralight-menu' />
         </NavLink>
@@ -167,10 +168,13 @@ const Navbar = () => {
             )
           })}
         {!auth.user ? (
+          <>
+          <NavLink to='/register'>Register</NavLink>
           <NavLink to='/login'>Login</NavLink>
+          </>
         ) : (
-          <NavLink to='/logout' onClick={handleLogout}>
-            logout
+          <NavLink to='/login' onClick={handleLogout}>
+            Logout
           </NavLink>
         )}
         <Link to='/cart'>

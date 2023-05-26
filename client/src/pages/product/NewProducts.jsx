@@ -67,7 +67,7 @@ const NewProducts = () => {
                             </button>
                             <section className='cartItem-card'>
                               <div className='cartItem'>
-                                <img src={image || avatar} alt={name} />
+                                <img src={image || avatar} alt={name} className='skeleton'/>
                                 <div className='description-items__container'>
                                   <div className='description'>
                                     <p>Name: {name}</p>

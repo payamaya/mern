@@ -26,10 +26,14 @@
   --SHADOWS-BLACK: 0px 3px 15px rgba(0, 0, 0, 0.421);
   --SHADOWS-WHITE: 0px 3px 15px rgba(173, 173, 173, 0.733);
   --PRIMARY-SHADOWS: 0px 3px 15px rgba(0, 0, 0, 0.6);
-  --BORDERS: 2px solid var(--LIGHT-COLOR);
+  --BORDERS: 2px solid var(--WHITE-COLOR);
 
   --SHADOWS: 0px 3px 15px rgba(0, 0, 0, 0.421);
   --PRIMARY-SHADOWS: 0px 3px 15px rgba(0, 0, 0, 0.6);
+  /* -----------------MODAL------------- */
+    --OVERLAY-COLOR:#1c75db;
+    --MODAL-CONTENT:#3382dc;
+    /* 
   /* -----------------navbar-anchor-color-------------- */
   /* --WHITE-COLOR: #030303; */
   --ALT-DARK-COLOR: #02083f;
@@ -73,7 +77,11 @@
     --NAV-COLOR: #151516;
     --HAMBURGARE-MENU: #060607;
     --PRIMARY-NAV-COLOR: #787272;
-    /* ------------BUTTON------------------------ */
+    /* -----------------MODAL------------- */
+    --OVERLAY-COLOR:#060607;
+    --MODAL-CONTENT:#161616;
+    /* 
+    ------------BUTTON------------------------ */
     --LINK-COLOR: rgb(250, 248, 248);
     /* GENERAL */
     --PADDING: 1rem;

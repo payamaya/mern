@@ -4,3 +4,4 @@ npm install connect-mongo@3.1.2
 
 npm i connect-mongo
 npm i react-stripe-checkout
+npm install mongodb --save

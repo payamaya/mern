@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import {
   Admin,
@@ -20,8 +20,9 @@ import {
   SignUp,
   Cart,
   NewProductsItems,
-  Chat,
-  Checkout
+  // Chat,
+  Checkout,
+  PrivacyPolicy
 } from './pages/index'
 import Navbar from './layouts/navbar/Navbar'
 import Footer from './layouts/footer/Footer'
@@ -37,6 +38,7 @@ import { Login, Profile, RequireAuth, Register } from './router'
 import { AuthProvider } from './components/utils/auth'
 import { ShopContextProvider } from './context/CartContext'
 import { SortContextProvider } from './context/SortingContext'
+import CookieConsent from 'react-cookie-consent'
 
 // import About from './components/About'
 // Dynamic lazy component and must be place down otherwise react will complain
@@ -132,12 +134,59 @@ function App() {
             <Route path='cart' element={<Cart />} />
             <Route path='contact' element={<Contact />} />
             <Route path='checkout' element={<Checkout />} />
-
+            <Route path='/privacy' element={<PrivacyPolicy />} />
             {/* this route will match only when no other routes do, can display a content on the page by making this route <Route>Here you can display any element you wish, or you can make a new page just for Nomatch route</Route>*/}
             <Route path='*' element={<NoMatch />} />
           </Routes>
-          <Chat />
+          {/* <Chat /> */}
           <Footer />
+          <CookieConsent
+            debug={true}
+            // location='top' display where the cookies will appear
+            style={{
+              background: 'var(--DARK-COLOR)',
+              color: 'var(--LIGHT-COLOR)',
+              fontSize: '1.8rem',
+              textAlign: 'left',
+            }}
+            buttonStyle={{
+              background: 'var(--LIGHT-COLOR)',
+              color: 'var(--DARK-MODE)',
+              borderRadius: '5px',
+              fontSize: '1.5rem',
+              padding: '1.5rem',
+            }}
+            buttonText='Accept All'
+            expires={1} // expires per day
+          >
+            <div className='cookies__container'>
+              <h1>This website uses cookies</h1>
+              <p className='cookies-para'>
+                We use cookies to improve user experience. Choose what cookies
+                you allow us to use. You can read more about our Cookie Policy
+                in our{' '}
+                <a href='/privacy' className='privacy-link'>
+                  Privacy policy
+                </a>
+              </p>
+            </div>
+            {/* <button
+              style={{
+                float: 'right',
+                background: 'var(--LIGHT-COLOR)',
+                color: 'var(--DARK-MODE)',
+                borderRadius: '5px',
+                fontSize: '1.5rem',
+                padding: '1.5rem',
+                marginTop: '0',
+              }}
+              onClick={() => {
+                alert('yay')
+              }}
+            >
+              Reject All
+            </button> */}
+          </CookieConsent>
           {/*the footer component goes her <Footer></Footer> */}
         </AuthProvider>
       </SortContextProvider>
